@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZooCore", "ZooCore\ZooCore.csproj", "{EB2449E3-4F15-4874-BB4E-6F7CD372EA63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZooBlazor", "ZooBlazor\ZooBlazor.csproj", "{DA60B506-045A-4B52-AD7D-7926176F805D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZooAPI", "ZooAPI\ZooAPI.csproj", "{0090E05D-6507-4191-A4DC-6D5991A5D597}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB2449E3-4F15-4874-BB4E-6F7CD372EA63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB2449E3-4F15-4874-BB4E-6F7CD372EA63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB2449E3-4F15-4874-BB4E-6F7CD372EA63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB2449E3-4F15-4874-BB4E-6F7CD372EA63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA60B506-045A-4B52-AD7D-7926176F805D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA60B506-045A-4B52-AD7D-7926176F805D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA60B506-045A-4B52-AD7D-7926176F805D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA60B506-045A-4B52-AD7D-7926176F805D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0090E05D-6507-4191-A4DC-6D5991A5D597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0090E05D-6507-4191-A4DC-6D5991A5D597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0090E05D-6507-4191-A4DC-6D5991A5D597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0090E05D-6507-4191-A4DC-6D5991A5D597}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC6DA556-AE4C-4726-A73C-E94EBB39CBFD}
+	EndGlobalSection
+EndGlobal
