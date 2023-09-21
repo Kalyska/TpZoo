@@ -4,9 +4,9 @@ using ZooCore.Models;
 
 namespace ZooAPI.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class AppDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Species> Species { get; set; }
         public DbSet<Animal> Animals { get; set; }
