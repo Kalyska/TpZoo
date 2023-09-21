@@ -12,13 +12,14 @@ namespace ZooAPI.Extensions
     {
         public static void InjectDependancies(this WebApplicationBuilder builder)
         {
+            builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
             builder.AddSwagger();
 
             builder.AddDatabase();
 
             builder.AddRepositories();
-
         }
 
         private static void AddSwagger(this WebApplicationBuilder builder)
