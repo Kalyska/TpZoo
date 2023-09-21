@@ -1,9 +1,44 @@
 ﻿@page "/"
+@using System.Globalization;
+@using ZooBlazor.DTOs;
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Accueil</PageTitle>
 
-<h1>Hello, world!</h1>
+@* Créez une page d'accueil qui affiche une liste d'animaux présentsdans le zoo. Il sera possible de les trier selon un ou plusieurs critères au choix. *@
 
-Welcome to your new app.
+<h1>Bienvenue au Zoo Clemy !</h1>
+<h2>Venez rencentrer les incroyables animaux du ZooParc</h2>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<div class="d-grid"></div>
+
+
+<div class="container-fluid">
+    <div class="row text-center">
+        @foreach (var animal in Animals)
+        {
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@animal.ImageUrl" alt="Photo de @animal.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@animal.Name</h5>
+                    <p class="card-text">@animal.Description</p>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="card-link">Plus d'informations</a>
+                </div>
+            </div>
+        }
+    </div>
+
+
+
+    @*         @if (IsZooMember)
+    {
+
+    <button class="col btn text-primary border-primary" @onclick="() => EditAnimal(animal)"><i class="bi bi-pencil-square"></i></button>
+
+    <button class="col btn btn-danger" @onclick="() => DeleteAnimal(animal.Id)"><i class="bi bi-trash3"></i></button>
+    } *@
+
+</div>
+
+
