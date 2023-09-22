@@ -10,11 +10,13 @@ namespace ZooAPI.Data
 
         public DbSet<Species> Species { get; set; }
         public DbSet<Animal> Animals { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Species>().HasData(InitialSpecies.zooSpecies);
             modelBuilder.Entity<Animal>().HasData(InitialAnimal.Animals);
+            modelBuilder.Entity<User>().HasData(InitialUser.zooUsers);
         }
     }
 }
