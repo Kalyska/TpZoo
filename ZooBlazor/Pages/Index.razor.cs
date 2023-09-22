@@ -9,6 +9,9 @@ namespace ZooBlazor.Pages
     {
 
         [Inject]
+        public NavigationManager Navigation { get; set; }
+
+        [Inject]
         public IAnimalService AnimalService { get; set; }
 
         private bool IsZooMember { get; set; } = false;

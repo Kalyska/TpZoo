@@ -7,7 +7,7 @@
 @* Créez une page d'accueil qui affiche une liste d'animaux présentsdans le zoo. Il sera possible de les trier selon un ou plusieurs critères au choix. *@
 
 <h1>Bienvenue au Zoo Clemy !</h1>
-<h2>Venez rencentrer les incroyables animaux du ZooParc</h2>
+<h2>Venez rencontrer les incroyables animaux du ZooParc</h2>
 
 <div class="container-fluid">
     <div class="row text-center">
@@ -19,8 +19,12 @@
                     <h5 class="card-title">@animal.Name</h5>
                     <p class="card-text">@animal.Description</p>
                 </div>
-                <div class="card-body">
-                    <a href="#" class="card-link">Plus d'informations</a>
+                <div class="card-footer">
+
+                    <button @onclick="@(() => Navigation.NavigateTo($"details/{animal.Id}"))" class="btn btn-success">
+                        Plus d'informations
+                    </button>
+
                 </div>
             </div>
         }
