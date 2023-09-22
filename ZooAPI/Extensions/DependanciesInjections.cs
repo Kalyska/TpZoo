@@ -70,6 +70,7 @@ namespace ZooAPI.Extensions
         private static void AddRepositories(this WebApplicationBuilder builder)
         {
             builder.Services.AddScoped<IRepository<Animal>, AnimalRepository>();
+            builder.Services.AddScoped<IRepository<User>, UserRepository>();
         }
 
         private static void AddAuthentication(this WebApplicationBuilder builder)
