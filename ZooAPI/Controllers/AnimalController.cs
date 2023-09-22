@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ZooAPI.Repositories;
 using ZooCore.Models;
 
@@ -6,6 +7,7 @@ namespace ZooAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class AnimalController : ControllerBase
     {
         private readonly IRepository<Animal> _animalRepository;
@@ -16,12 +18,14 @@ namespace ZooAPI.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             return Ok(await _animalRepository.GetAll());
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> Get(int id)
         {
             var animal = await _animalRepository.GetById(id);

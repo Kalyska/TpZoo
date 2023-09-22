@@ -103,7 +103,7 @@ namespace ZooAPI.Extensions
 
         public static void AddAuthorization(this WebApplicationBuilder builder)
         {
-            builder.Services.AddAuthorization();
+            builder.Services.AddAuthorization(options => { });
         }
     }
 }
