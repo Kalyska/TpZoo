@@ -8,7 +8,7 @@ using ZooCore.Validators;
 
 namespace ZooCore.Models
 {
-    internal class User
+    public class User
     {
         public int Id { get; set; }
         [Required]
@@ -28,6 +28,6 @@ namespace ZooCore.Models
         public string? Email { get; set; }
         [Required]
         [PasswordValidator]
-        public string? PassWord { get; set; }
+        public string? Password { get; set; }
     }
 }
