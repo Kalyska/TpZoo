@@ -57,8 +57,8 @@ namespace ZooAPI.Repositories
                 userFromDb.Address = user.Address;
             if (userFromDb.Email != user.Email)
                 userFromDb.Email = user.Email;
-            if (userFromDb.PassWord != user.PassWord)
-                userFromDb.PassWord = user.PassWord;
+            if (userFromDb.Password != user.Password)
+                userFromDb.Password = user.Password;
 
             return await _dbContext.SaveChangesAsync() > 0;
         }
