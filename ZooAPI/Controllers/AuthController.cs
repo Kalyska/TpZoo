@@ -35,7 +35,7 @@ namespace ZooAPI.Controllers
             if (await _userRepository.Get(u => u.Email == user.Email) != null)
                 return BadRequest("Email is already taken!");
 
-            user.Password = EncryptPassword(user.Password);
+            user.Password = new PasswordCrypter(_securityKey).EncryptPassword(user.Password);
             // pour restreindre la création d'admins : isAdmin = false
 
             if (await _userRepository.Add(user) > 0)
@@ -46,7 +46,7 @@ namespace ZooAPI.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Login([FromBody] UserLoginDTO login)
         {
-            login.Password = EncryptPassword(login.Password);
+            login.Password = new PasswordCrypter(_securityKey).EncryptPassword(login.Password);
 
             var user = await _userRepository.Get(u => u.Email == login.Email && u.Password == login.Password);
 
@@ -77,18 +77,10 @@ namespace ZooAPI.Controllers
             {
                 Token = token,
                 Message = "Valid Authentication !",
-                User = user
+                //User = user
             });
         }
 
         // possible d'ajouter les actions de crud des users ici ou dans un controlleur UserController
-
-        [NonAction]
-        private string EncryptPassword(string? password)
-        // il serait plus adapté de mettre ce genre de méthode dans un service dédié au chiffrage
-        {
-            if (string.IsNullOrEmpty(password)) return "";
-            return Convert.ToBase64String(Encoding.UTF8.GetBytes(password + _securityKey));
-        }
     }
 }
