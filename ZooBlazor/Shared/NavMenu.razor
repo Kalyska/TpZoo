@@ -1,29 +1,20 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">ZooBlazor</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
+﻿<nav class="navbar">
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Accueil
-            </NavLink>
-        </div>
-    </nav>
-</div>
 
-@code {
-    private bool collapseNavMenu = true;
+    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+        <button type="button" class="btn"><h2>Home</h2></button>
+    </NavLink>
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
+
+    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+        <img src="/images/LogoClemyRd.jpg" class="logo" alt="Logo" href="#">
+    </NavLink>
+
+
+
+    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+        <button type="button" class="btn"><h2>Login</h2></button>
+    </NavLink>
+
+</nav>

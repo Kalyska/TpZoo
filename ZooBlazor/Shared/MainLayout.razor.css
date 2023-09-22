@@ -9,11 +9,12 @@ main {
 }
 
 .sidebar {
-    background-image: linear-gradient(to bottom, #09341c, #285727, #527a2b, #869d2c, #c4be2b);
+    background-image: radial-gradient(circle, #6dcca9, #68bf9f, #64b295, #5fa68b, #5a9981, #518e7b, #488475, #40796e, #336d68, #286162, #1e565b, #174a53);
+
 }
 
 .top-row {
-    background-color: #09341C;
+    background-color: #f7f7f7;
     border-bottom: 1px solid #d6d5d5;
     justify-content: flex-end;
     height: 3.5rem;
@@ -27,14 +28,14 @@ main {
         text-decoration: none;
     }
 
-    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
-        text-decoration: underline;
-    }
+        .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
+            text-decoration: underline;
+        }
 
-    .top-row ::deep a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+        .top-row ::deep a:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
 @media (max-width: 640.98px) {
     .top-row:not(.auth) {
@@ -56,7 +57,7 @@ main {
     }
 
     .sidebar {
-        width: 250px;
+        width: 150px;
         height: 100vh;
         position: sticky;
         top: 0;
@@ -68,11 +69,11 @@ main {
         z-index: 1;
     }
 
-    .top-row.auth ::deep a:first-child {
-        flex: 1;
-        text-align: right;
-        width: 0;
-    }
+        .top-row.auth ::deep a:first-child {
+            flex: 1;
+            text-align: right;
+            width: 0;
+        }
 
     .top-row, article {
         padding-left: 2rem !important;

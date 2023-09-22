@@ -1,62 +1,65 @@
-.navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.1);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    background-image: radial-gradient(circle, #dbf9ed, #d0f5e6, #c6f1e0, #bbedd9, #b0e9d2, #ade5ce, #abe0cb, #a8dcc7, #acd7c6, #b1d1c4, #b5ccc3, #b9c6c1);
 }
 
-.top-row {
-    height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+
+.navbar {
+    background-image: radial-gradient(circle, #6dcca9, #68bf9f, #64b295, #5fa68b, #5a9981, #518e7b, #488475, #40796e, #336d68, #286162, #1e565b, #174a53);
+    justify-content: center;
+    position: absolute;
+    width:100%;
+    height:100%;
 }
 
-.navbar-brand {
-    font-size: 1.1rem;
+.logo {
+    border: 5px inset #548974;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 3px 3px 12px #444444;
+    height: 120px;
+    width: 120px;
+    
 }
 
-.oi {
-    width: 2rem;
-    font-size: 1.1rem;
-    vertical-align: text-top;
-    top: -2px;
-}
-
-.nav-item {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
-}
-
-    .nav-item:first-of-type {
-        padding-top: 1rem;
+    .logo:hover {
+        border: 5px outset #548974;
+        box-shadow: 1px 1px 4px #777777;
+        -webkit-box-shadow: 1px 1px 4px #777777;
+        -moz-box-shadow: 1px 1px 4px #777777;
     }
 
-    .nav-item:last-of-type {
-        padding-bottom: 1rem;
-    }
 
-    .nav-item ::deep a {
-        color: #d7d7d7;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
-
-.nav-item ::deep a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
+.btn {
+    text-decoration: none;
+    padding: 12px;
+    font-family: tahoma;
+    font-size: 1em;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border: 5px inset #548974;
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
+    margin: 0 1em;
+    width: 120px;
 }
 
-.nav-item ::deep a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-}
 
-@media (min-width: 641px) {
-    .navbar-toggler {
-        display: none;
+    .btn:hover {
+        padding: 12px;
+        background-color: #eeece1;
+        border: 5px outset #548974;
+        box-shadow: 1px 1px 4px #777777;
+        -webkit-box-shadow: 1px 1px 4px #777777;
+        -moz-box-shadow: 1px 1px 4px #777777;
     }
 
-    .collapse {
-        /* Never collapse the sidebar for wide screens */
-        display: block;
-    }
+.nav-link {
+    width: 120px;
 }

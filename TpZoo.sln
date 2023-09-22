@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZooCore", "ZooCore\ZooCore.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZooBlazor", "ZooBlazor\ZooBlazor.csproj", "{DA60B506-045A-4B52-AD7D-7926176F805D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZooAPI", "ZooAPI\ZooAPI.csproj", "{0090E05D-6507-4191-A4DC-6D5991A5D597}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZooAPI", "ZooAPI\ZooAPI.csproj", "{0090E05D-6507-4191-A4DC-6D5991A5D597}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
