@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    background-image: radial-gradient(circle, #dbf9ed, #d0f5e6, #c6f1e0, #bbedd9, #b0e9d2, #ade5ce, #abe0cb, #a8dcc7, #acd7c6, #b1d1c4, #b5ccc3, #b9c6c1);
 }
 
 
@@ -53,7 +52,6 @@
 
     .btn:hover {
         padding: 12px;
-        background-color: #eeece1;
         border: 5px outset #548974;
         box-shadow: 1px 1px 4px #777777;
         -webkit-box-shadow: 1px 1px 4px #777777;
