@@ -5,6 +5,9 @@ using ZooAPI.Data;
 using ZooAPI.Repositories;
 using ZooCore.Models;
 using Microsoft.EntityFrameworkCore;
+using ZooAPI.Helpers;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace ZooAPI.Extensions
 {
@@ -20,6 +23,10 @@ namespace ZooAPI.Extensions
             builder.AddDatabase();
 
             builder.AddRepositories();
+
+            builder.AddAuthentication();
+
+            builder.AddAuthorization();
         }
 
         private static void AddSwagger(this WebApplicationBuilder builder)
@@ -65,5 +72,37 @@ namespace ZooAPI.Extensions
             builder.Services.AddScoped<IRepository<Animal>, AnimalRepository>();
         }
 
+        private static void AddAuthentication(this WebApplicationBuilder builder)
+        {
+            // récupération de la clé secrète
+            var appSettingsSection = builder.Configuration.GetSection("AppSettings");
+            builder.Services.Configure<AppSettings>(appSettingsSection);
+            AppSettings appSettings = appSettingsSection.Get<AppSettings>();
+
+            var key = Encoding.ASCII.GetBytes(appSettings.SecretKey!);
+
+            // authentification
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.SaveToken = true;
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuerSigningKey = true, // utilisation d'une clé cryptée pour la sécurité du token
+                        IssuerSigningKey = new SymmetricSecurityKey(key), // clé cryptée en elle même
+                        ValidateLifetime = true, // vérification du temps d'expiration du Token
+                        ValidateAudience = true, // vérification de l'audience du token
+                        ValidAudience = appSettings.ValidAudience, // l'audience
+                        ValidateIssuer = true, // vérification du donneur du token
+                        ValidIssuer = appSettings.ValidIssuer, // le donneur
+                        ClockSkew = TimeSpan.Zero // décalage possible de l'expiration du token
+                    };
+                });
+        }
+
+        public static void AddAuthorization(this WebApplicationBuilder builder)
+        {
+            builder.Services.AddAuthorization();
+        }
     }
 }
