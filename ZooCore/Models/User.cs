@@ -8,7 +8,7 @@ using ZooCore.Validators;
 
 namespace ZooCore.Models
 {
-    internal class User
+    public class User
     {
         public int Id { get; set; }
         [Required]
