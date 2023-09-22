@@ -1,0 +1,33 @@
+﻿@using ZooBlazor.Services;
+@using ZooCore.Models;
+
+@page "/details/{Id:int}"
+
+
+<h3>Details</h3>
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="@animaldetail.ImageUrl" alt="Photo de @animaldetail.Name">
+    <div class="card-body">
+        <h5 class="card-title">@animaldetail.Name</h5>
+        <p class="card-text">@animaldetail.Description</p>
+    </div>
+</div>
+
+@code {
+
+    [Inject]
+    public IAnimalService? AnimalService { get; set; }
+
+    [Parameter]
+    public int Id { get; set; }
+
+    Animal animaldetail { get; set; } = new Animal();
+
+    protected override async Task OnInitializedAsync()
+    {
+        animaldetail = await AnimalService.Get(Id);
+    }
+
+}
+
