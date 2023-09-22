@@ -9,8 +9,8 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-builder.Services.AddSingleton<IAnimalService, FakeDBAnimalService>();
-//builder.Services.AddScoped<IAnimalService, APIAnimalService>();
+//builder.Services.AddSingleton<IAnimalService, FakeDBAnimalService>();
+builder.Services.AddScoped<IAnimalService, APIAnimalService>();
 
 
 await builder.Build().RunAsync();
